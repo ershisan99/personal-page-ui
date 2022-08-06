@@ -6,7 +6,7 @@ import React, { ReactNode, useState } from 'react';
 import { WithChildren } from './../../helpers/withChildren';
 import s from './InfoBlock.module.css';
 
-type PropsType = WithChildren<{
+type Props = WithChildren<{
   title: string;
   titleIcon?: ReactNode;
   tooltip?: ReactNode;
@@ -18,7 +18,7 @@ type PropsType = WithChildren<{
   disabled?: boolean;
 }>;
 
-export const UiInfoBlock: React.FC<PropsType> = ({
+export const UiInfoBlock: React.FC<Props> = ({
   title,
   titleIcon,
   tooltip,
