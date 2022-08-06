@@ -1,5 +1,13 @@
 import CloseIcon from '@mui/icons-material/Close';
-import { Box, Dialog, Grid, IconButton, useTheme } from '@mui/material';
+import {
+  Box,
+  Dialog,
+  DialogProps,
+  Grid,
+  IconButton,
+  SxProps,
+  useTheme,
+} from '@mui/material';
 import React, { FC } from 'react';
 
 export type Props = {
@@ -8,6 +16,9 @@ export type Props = {
   title: string;
   children: React.ReactNode;
   width?: number;
+  mainContentStyle?: SxProps;
+  titleStyle?: SxProps;
+  dialogProps?: DialogProps;
 };
 
 export const UiModal: FC<Props> = ({
@@ -16,20 +27,28 @@ export const UiModal: FC<Props> = ({
   title,
   children,
   width,
+  mainContentStyle,
+  titleStyle,
+  dialogProps,
 }) => {
   const theme = useTheme();
   const isDarkTheme = theme.palette.mode === 'dark';
-  const style = {
-    width: width || 500,
-    boxShadow: 24,
-    position: 'relative',
-  };
-  const titleStyle = {
-    fontFamily: 'Roboto',
-    fontWeight: 500,
-    fontSize: '18px',
-    lineHeight: '21px',
-  };
+
+  const style = mainContentStyle
+    ? mainContentStyle
+    : {
+        width: width || 500,
+        boxShadow: 24,
+        position: 'relative',
+      };
+  const defaultTitleStyle = titleStyle
+    ? titleStyle
+    : {
+        fontFamily: 'Roboto',
+        fontWeight: 500,
+        fontSize: '18px',
+        lineHeight: '21px',
+      };
   return (
     <Dialog
       open={open}
@@ -41,6 +60,7 @@ export const UiModal: FC<Props> = ({
           maxWidth: '100%',
         },
       }}
+      {...dialogProps}
     >
       <Box sx={style}>
         <Grid
@@ -56,7 +76,7 @@ export const UiModal: FC<Props> = ({
               : '1px solid #E5E5E5',
           }}
         >
-          <Box sx={titleStyle}>{title}</Box>
+          <Box sx={defaultTitleStyle}>{title}</Box>
           <Box justifyContent="center" alignItems="center" display="flex">
             <IconButton onClick={onClose} size="small">
               <CloseIcon />
