@@ -7,6 +7,7 @@ module.exports = {
       postcss({
         modules: true,
         autoModules: true,
+        plugins: [autoprefixer()],
         inject: true,
       })
     );

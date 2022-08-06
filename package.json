@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -8,7 +8,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=14.0.0"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -43,9 +43,10 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "ui",
+  "name": "personal-page-ui",
   "author": {
-    "name": "andres"
+    "name": "andres",
+    "email": "andres99.dev@gmail.com"
   },
   "module": "dist/personal-page-ui.esm.js",
   "size-limit": [
@@ -59,7 +60,7 @@
     }
   ],
   "devDependencies": {
-    "@babel/core": "^7.18.10",
+    "@babel/core": "7.18.10",
     "@emotion/react": "11.8.2",
     "@emotion/styled": "11.8.1",
     "@fontsource/roboto": "4.5.5",
@@ -68,7 +69,7 @@
     "@mui/material": "5.5.2",
     "@mui/styles": "5.5.1",
     "@mui/x-date-pickers": "5.0.0-alpha.6",
-    "@size-limit/preset-small-lib": "^8.0.0",
+    "@size-limit/preset-small-lib": "8.0.0",
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-info": "^5.3.21",
     "@storybook/addon-links": "^6.5.10",
@@ -90,6 +91,6 @@
     "typescript-plugin-css-modules": "^3.4.0"
   },
   "dependencies": {
-    "postcss": "^8.4.14"
+    "postcss": "8.4.14"
   }
 }
