@@ -1,5 +1,11 @@
-import { MenuItem, Select, SelectChangeEvent, useTheme } from '@mui/material';
-import Pagination from '@mui/material/Pagination';
+import {
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  SelectProps,
+  useTheme,
+} from '@mui/material';
+import Pagination, { PaginationProps } from '@mui/material/Pagination';
 import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 
@@ -84,6 +90,8 @@ type Props = {
   totalItems: number;
   pageSizeOptions?: number[];
   itemName: string;
+  paginationProps?: PaginationProps;
+  selectProps?: SelectProps<number>;
 };
 export const UiPagination: React.FC<Props> = ({
   page,
@@ -93,6 +101,8 @@ export const UiPagination: React.FC<Props> = ({
   setPageSize,
   pageSizeOptions,
   itemName,
+  paginationProps,
+  selectProps,
 }) => {
   const handlePageChange: (
     event: React.ChangeEvent<unknown>,
@@ -117,6 +127,7 @@ export const UiPagination: React.FC<Props> = ({
         shape="rounded"
         page={page}
         onChange={handlePageChange}
+        {...paginationProps}
       />
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <p style={{ margin: '0 6px 0 12px' }}>Показать</p>
@@ -125,6 +136,7 @@ export const UiPagination: React.FC<Props> = ({
           value={pageSize}
           onChange={handlePageSizeChange}
           className={!isDarkTheme ? classes.root : classes.rootSelectDark}
+          {...selectProps}
         >
           {pageSizeOptions ? (
             pageSizeOptions.map(value => (
