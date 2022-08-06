@@ -1,0 +1,39 @@
+/* NavBar */
+.header {
+    background: #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 24px;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 4px 4px 0 0;
+    height: 36px;
+}
+
+.headerDark {
+    background: #263648;
+}
+
+/* Tooltip */
+.tooltipBox {
+    display: flex;
+    align-items: center;
+}
+
+.tooltip {
+    margin: 3px 15px 0 0;
+}
+
+
+/* Content */
+.content {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 0 0 4px 4px;
+}
+
+.contentDark {
+    background-color: #222F40;
+    border: 1px solid #263648;
+}
