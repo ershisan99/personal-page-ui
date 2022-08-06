@@ -141,7 +141,7 @@ export const UiPagination: React.FC<Props> = ({
             </>
           )}
         </Select>
-        <p>{itemName} на странице</p>
+        <p style={{ margin: '0 6px 0 12px' }}>{itemName} на странице</p>
       </div>
     </div>
   );
