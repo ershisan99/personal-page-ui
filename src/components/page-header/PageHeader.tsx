@@ -30,6 +30,7 @@ export const UiPageHeader: React.FC<PropsType> = ({
             <KeyboardBackspaceIcon />
           </IconButton>
           <Typography
+            onClick={goBack}
             sx={{
               fontWeight: 500,
               fontSize: '16px',
