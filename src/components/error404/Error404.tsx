@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import s from './Error404.module.css';
 
 import error404svg from './error404.svg';
-export const Error404: React.FC = () => {
+export const UiError404: React.FC = () => {
   const navigate = useNavigate();
 
   return (
